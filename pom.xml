@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo/com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.HelloApplication
+                                com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo/com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.PolimorfismoApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
