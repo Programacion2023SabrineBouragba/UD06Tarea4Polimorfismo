@@ -15,6 +15,7 @@ public class HelloApplication extends Application {
         stage.setTitle("UD06T4- Polimorfismo");
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {
