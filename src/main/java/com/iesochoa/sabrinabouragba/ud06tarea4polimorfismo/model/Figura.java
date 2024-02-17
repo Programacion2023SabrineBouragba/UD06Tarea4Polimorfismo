@@ -20,27 +20,27 @@ public class Figura {
         this.size=size;
     }
 
-    private void dibujar(Pane pnPanel){
+    public void dibujar(Pane pnPanel){
 
     }
 
-    private void vorrar(Pane pnPanel){
+    public void vorrar(Pane pnPanel){
 
     }
 
-    private void cambiarPosicion(int x, int y){
+    public void cambiarPosicion(int x, int y){
 
     }
 
-    private void cambiarColor(Color color){
+    public void cambiarColor(Color color){
 
     }
 
-    private void cambiarSize(int size){
+    public void cambiarSize(int size){
 
     }
 
-    private void moverFigura(Pane pnPanel){
+    public void moverFigura(Pane pnPanel){
 
     }
 
@@ -53,42 +53,42 @@ public class Figura {
     }
 
 
-    private int getY(){
+    public int getY(){
         return y;
     }
-    private void setY(int y){
+    public void setY(int y){
         this.y=y;
     }
 
 
-    private Color getColor(){
+    public Color getColor(){
         return color;
     }
-    private void setColor(Color color){
+    public void setColor(Color color){
         this.color=color;
     }
 
 
-    private int getDeltaX(){
+    public int getDeltaX(){
         return deltaX;
     }
-    private void setDeltaX(int deltaX){
+    public void setDeltaX(int deltaX){
         this.deltaX=deltaX;
     }
 
 
-    private int getDeltaY(){
+    public int getDeltaY(){
         return deltaY;
     }
-    private void setDeltaY(int deltaY){
+    public void setDeltaY(int deltaY){
         this.deltaY=deltaY;
     }
 
 
-    private int getSize(){
+    public int getSize(){
         return size;
     }
-    private void setSize(int size){
+    public void setSize(int size){
         this.size=size;
     }
 

@@ -7,26 +7,26 @@ import javafx.scene.shape.Circle;
 public class Elipse extends Figura{
     private Elipse elipse;
 
-    private Elipse(int x, int y, Color color, int size){
+    public Elipse(int x, int y, Color color, int size){
         super(x, y, color, size);
     }
 
-    private void dibujar(Pane pane){
+    public void dibujar(Pane pane){
 
     }
-    private void borrar(Pane pane){
+    public void borrar(Pane pane){
 
     }
-    private void cambiarPosicion(int x, int y){
+    public void cambiarPosicion(int x, int y){
 
     }
-    private void cambiarColor(Color color){
+    public void cambiarColor(Color color){
 
     }
-    private void cambiarSize(int size){
+    public void cambiarSize(int size){
 
     }
-    private void moverFigura(Pane pnPanel){
+    public void moverFigura(Pane pnPanel){
 
     }
 }

@@ -1,14 +1,30 @@
 package com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.controllers;
 
+import com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model.Figura;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
-public class InicioController {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+public class InicioController implements Initializable {
+    //figura actual
+    Figura figuraActual;
+    //posicion central
+    int xInicial;
+    int yInicial;
+    //tamaño inicial
+    int sizeInicial=50;
+    //lista con las figuras
+    //utilizamos polimorfismo
+    ArrayList<Figura> figuras= new ArrayList<>();
 
     @FXML
     private Button btBorrarTodos;
@@ -92,4 +108,8 @@ public class InicioController {
 
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

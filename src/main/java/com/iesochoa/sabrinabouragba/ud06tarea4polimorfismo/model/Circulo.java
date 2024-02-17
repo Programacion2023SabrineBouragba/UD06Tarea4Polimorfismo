@@ -7,26 +7,39 @@ import javafx.scene.shape.Circle;
 public class Circulo extends Figura{
     private Circle circulo;
 
-    private Circulo(int x, int y, Color color, int size){
+    public Circulo(int x, int y, Color color, int size){
         super(x, y, color, size);
+
+        //creamos circulo de radio size
+        Circle circulo= new Circle(size);
+        //iniciamos u posicion X e Y
+        circulo.setCenterX(x);
+        circulo.setCenterY(y);
+
+        //damos color
+        circulo.setFill(color);
     }
 
-    private void dibujar(Pane pane){
-
+    public void dibujar(Pane pane){
+        pane.getChildren().add(circulo);
     }
-    private void borrar(Pane pane){
-
+    public void borrar(Pane pane){
+        pane.getChildren().remove(circulo);
     }
-    private void cambiarPosicion(int x, int y){
-
+    public void cambiarPosicion(int x, int y){
+        setX(x);
+        setY(y);
+        circulo.setCenterX(x);
+        circulo.setCenterY(y);
     }
-    private void cambiarColor(Color color){
-
+    public void cambiarColor(Color color){
+        this.setColor(color);
+        circulo.setFill(color);
     }
-    private void cambiarSize(int size){
-
+    public void cambiarSize(int size){
+        circulo.setRadius(size);
     }
-    private void moverFigura(Pane pnPanel){
+    public void moverFigura(Pane pnPanel){
 
     }
 
