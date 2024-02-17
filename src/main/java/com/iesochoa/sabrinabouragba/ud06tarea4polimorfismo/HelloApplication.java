@@ -14,6 +14,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 350, 300);
         stage.setTitle("UD06T4- Polimorfismo");
         stage.setScene(scene);
+
         stage.show();
 
     }
