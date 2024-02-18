@@ -119,7 +119,7 @@
             </VBox>
          </children>
       </HBox>
-      <Pane fx:id="pnPanel" prefHeight="222.0" prefWidth="600.0" style="-fx-background-color: aquamarine;">
+      <Pane fx:id="pnPanel" maxWidth="600.0" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: aquamarine;">
          <VBox.margin>
             <Insets />
          </VBox.margin>
