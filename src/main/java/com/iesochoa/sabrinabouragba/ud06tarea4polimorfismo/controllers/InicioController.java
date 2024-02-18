@@ -59,8 +59,17 @@ public class InicioController implements Initializable {
     private Slider slPosicionY;
 
     @FXML
-    void onClickBorrarTodo(ActionEvent event) {
+    void onClickGuardar(ActionEvent event) {
+        //añadimos la figura a la lista
+        figuras.add(figuraActual);
+        //quitamos la figura de la pantalla
+        figuraActual.borrar(pnPanel);
+    }
 
+    @FXML
+    void onClickBorrarTodo(ActionEvent event) {
+        //borramos de la lista todas las figuras
+        figuras.clear();
     }
 
     @FXML
@@ -89,10 +98,6 @@ public class InicioController implements Initializable {
         figuraActual.dibujar(pnPanel);
     }
 
-    @FXML
-    void onClickGuardar(ActionEvent event) {
-
-    }
 
     @FXML
     void onClickIniciar(ActionEvent event) {
