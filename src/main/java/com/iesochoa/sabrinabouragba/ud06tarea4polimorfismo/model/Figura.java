@@ -24,7 +24,7 @@ public class Figura {
 
     }
 
-    public void vorrar(Pane pnPanel){
+    public void borrar(Pane pnPanel){
 
     }
 

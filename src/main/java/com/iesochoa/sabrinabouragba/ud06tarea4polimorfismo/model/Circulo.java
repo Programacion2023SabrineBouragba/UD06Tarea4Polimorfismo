@@ -10,8 +10,8 @@ public class Circulo extends Figura{
     public Circulo(int x, int y, Color color, int size){
         super(x, y, color, size);
 
-        //creamos circulo de radio size
-        Circle circulo= new Circle(size);
+        //iniciamos la variable circulo de radio size
+        circulo= new Circle(size);
         //iniciamos u posicion X e Y
         circulo.setCenterX(x);
         circulo.setCenterY(y);

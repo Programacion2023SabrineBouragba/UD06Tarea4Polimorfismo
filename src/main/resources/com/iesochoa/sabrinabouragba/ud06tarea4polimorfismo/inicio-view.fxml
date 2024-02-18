@@ -13,7 +13,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.controllers.InicioController">
    <children>
       <HBox prefHeight="211.0" prefWidth="600.0">
@@ -30,17 +29,17 @@
                   </Label>
                   <HBox prefHeight="71.0" prefWidth="234.0">
                      <children>
-                        <Circle fill="DODGERBLUE" onMouseClicked="#onClickCirculo" radius="27.0" stroke="BLACK" strokeType="INSIDE">
+                        <Circle fill="DODGERBLUE" onMouseClicked="#onClickSeleccionFigura" radius="27.0" stroke="BLACK" strokeType="INSIDE">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Circle>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="51.0" onMouseClicked="#onClickCuadrado" stroke="BLACK" strokeType="INSIDE" width="58.0">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="51.0" onMouseClicked="#onClickSeleccionFigura" stroke="BLACK" strokeType="INSIDE" width="58.0">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
                         </Rectangle>
-                        <Ellipse fill="DODGERBLUE" onMouseClicked="#onClickElipse" radiusX="45.0" radiusY="27.0" stroke="BLACK" strokeType="INSIDE">
+                        <Ellipse fill="DODGERBLUE" onMouseClicked="#onClickSeleccionFigura" radiusX="45.0" radiusY="27.0" stroke="BLACK" strokeType="INSIDE">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
@@ -120,7 +119,7 @@
             </VBox>
          </children>
       </HBox>
-      <Pane fx:id="pnPanel" prefHeight="219.0" prefWidth="600.0">
+      <Pane fx:id="pnPanel" prefHeight="222.0" prefWidth="600.0" style="-fx-background-color: aquamarine;">
          <VBox.margin>
             <Insets />
          </VBox.margin>
