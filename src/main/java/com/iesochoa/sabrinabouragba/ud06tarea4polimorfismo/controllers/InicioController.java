@@ -162,14 +162,11 @@ public class InicioController implements Initializable {
             //el centro del panel
             xInicial=anchoPanel/2;
             yInicial=altoPanel/2;
-            //le damos a los slader X Y el valor máximo para que no se salga la figura
-            //del panel
+            //le damos a los slader X Y el valor máximo para que no se salga la figura del panel
             slPosicionX.setMax(anchoPanel);
             slPosicionX.setValue(xInicial);
             slPosicionY.setMax(altoPanel);
             slPosicionY.setValue(yInicial);
-            //Desactivamos el botón Parar para que no se use
-            //btParar.setDisable(true);
         });
     }
 
