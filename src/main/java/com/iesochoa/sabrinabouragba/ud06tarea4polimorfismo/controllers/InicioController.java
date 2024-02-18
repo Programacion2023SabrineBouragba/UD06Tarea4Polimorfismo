@@ -3,6 +3,8 @@ package com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.controllers;
 import com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model.Circulo;
 import com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model.Cuadrado;
 import com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model.Figura;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -30,6 +33,7 @@ public class InicioController implements Initializable {
     //lista con las figuras
     //utilizamos polimorfismo
     ArrayList<Figura> figuras= new ArrayList<>();
+    Timeline timeline;
 
     @FXML
     private Button btBorrarTodos;
@@ -101,12 +105,26 @@ public class InicioController implements Initializable {
 
     @FXML
     void onClickIniciar(ActionEvent event) {
-
+        //quitamos figura actual del panel
+        if (figuraActual!=null){
+            figuraActual.borrar(pnPanel);
+        }
+        //dibujamos las figuras
+        for (Figura figura: figuras){
+            figura.dibujar(pnPanel);
+        }
+        //iniciamos la animacion
+        iniciaMovimiento();
     }
 
     @FXML
     void onClickParar(ActionEvent event) {
-
+        //quitamos las figuras
+        for (Figura figura: figuras){
+            figura.borrar(pnPanel);
+        }
+        //iniciamos la animacion
+        timeline.stop();
     }
 
     @FXML
@@ -153,5 +171,23 @@ public class InicioController implements Initializable {
             //Desactivamos el botón Parar para que no se use
             //btParar.setDisable(true);
         });
+    }
+
+    private void moverFigura(){
+        for (Figura figura:figuras){
+            figura.moverFigura(pnPanel);
+        }
+    }
+
+    void iniciaMovimiento(){
+        //crear timeline para animacion
+        if (timeline==null){
+            //cada 16ms llama a moverFiguras
+            timeline=new Timeline(new KeyFrame(Duration.millis(16), event2->moverFigura()));
+            //repite la animacion indefinidamente
+            timeline.setCycleCount(Timeline.INDEFINITE);
+        }
+        //animacion se repite indefinidamente
+        timeline.play();
     }
 }

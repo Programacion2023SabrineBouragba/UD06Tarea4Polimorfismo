@@ -3,7 +3,7 @@ package com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
-public class Figura {
+public abstract class Figura {
     private int x;
     private int y;
     private int deltaX=2;

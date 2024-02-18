@@ -40,7 +40,24 @@ public class Circulo extends Figura{
         circulo.setRadius(size);
     }
     public void moverFigura(Pane pnPanel){
+        //actualizamos la posicion del circulo sumando delta
+        int newX=(int) circulo.getCenterX()+getDeltaX();
+        int newY=(int) circulo.getCenterY()+getDeltaY();
 
+        //cambiamos la direccion del circulo si alcanza los bordes
+        //he llegado al borde
+        if (newX <= circulo.getRadius()
+                //ha llegado al borde derecho
+                || newX >= pnPanel.getWidth() - circulo.getRadius())
+        {//cambiamos su dirección
+            setDeltaX(-getDeltaX());
+        }//comprobamo si llega arriba o abajo
+        if (newY <= circulo.getRadius() || newY >= pnPanel.getHeight() - circulo.getRadius()) {
+            setDeltaY(-getDeltaY());
+        }
+        //nueva posición
+        cambiarPosicion(newX,newY);
     }
+
 
 }
