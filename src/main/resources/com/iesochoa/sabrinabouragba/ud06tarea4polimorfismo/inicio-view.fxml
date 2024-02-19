@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -17,92 +18,93 @@
    <children>
       <HBox prefHeight="198.0" prefWidth="600.0">
          <children>
-            <VBox prefHeight="196.0" prefWidth="303.0">
+            <AnchorPane fx:id="apCrearFiguras">
                <children>
-                  <Label text="Polimorfismo">
-                     <font>
-                        <Font name="System Bold" size="27.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" top="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <HBox prefHeight="71.0" prefWidth="234.0">
+                  <VBox prefHeight="196.0" prefWidth="303.0">
                      <children>
-                        <Circle fill="DODGERBLUE" onMouseClicked="#onClickSeleccionFigura" radius="27.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="51.0" onMouseClicked="#onClickSeleccionFigura" stroke="BLACK" strokeType="INSIDE" width="58.0">
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
-                        </Rectangle>
-                        <Ellipse fill="DODGERBLUE" onMouseClicked="#onClickSeleccionFigura" radiusX="45.0" radiusY="27.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin>
-                        </Ellipse>
+                        <Label text="Polimorfismo">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="71.0" prefWidth="234.0">
+                           <children>
+                              <Circle fill="DODGERBLUE" onMouseClicked="#onClickSeleccionFigura" radius="27.0" stroke="BLACK" strokeType="INSIDE">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Circle>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="51.0" onMouseClicked="#onClickSeleccionFigura" stroke="BLACK" strokeType="INSIDE" width="58.0">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Rectangle>
+                              <Ellipse fill="DODGERBLUE" onMouseClicked="#onClickSeleccionFigura" radiusX="45.0" radiusY="27.0" stroke="BLACK" strokeType="INSIDE">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Ellipse>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="38.0" prefWidth="232.0">
+                           <children>
+                              <Button fx:id="btGuardar" mnemonicParsing="false" onAction="#onClickGuardar" text="Guardar" translateX="50.0" translateY="10.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btBorrarTodos" mnemonicParsing="false" onAction="#onClickBorrarTodo" text="Borrar Todo" translateX="70.0" translateY="10.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox prefHeight="38.0" prefWidth="232.0">
+                  </VBox>
+                  <VBox layoutX="308.0" prefHeight="196.0" prefWidth="166.0">
                      <children>
-                        <Button fx:id="btGuardar" mnemonicParsing="false" onAction="#onClickGuardar" text="Guardar" translateX="50.0" translateY="10.0">
-                           <HBox.margin>
+                        <Label text="Eje X" translateY="40.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="slPosicionX" blockIncrement="5.0" max="50.0" min="5.0" onMouseDragged="#onClickSliderX" onMouseReleased="#onClickSliderX" prefHeight="14.0" prefWidth="139.0" translateY="40.0" value="25.0">
+                           <VBox.margin>
                               <Insets />
-                           </HBox.margin>
-                        </Button>
-                        <Button fx:id="btBorrarTodos" mnemonicParsing="false" onAction="#onClickBorrarTodo" text="Borrar Todo" translateX="70.0" translateY="10.0">
-                           <HBox.margin>
+                           </VBox.margin>
+                        </Slider>
+                        <Label text="Eje Y" translateY="45.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="slPosicionY" blockIncrement="5.0" max="50.0" min="5.0" onMouseDragged="#onClickSliderY" onMouseReleased="#onClickSliderY" translateY="45.0" value="25.0" />
+                        <Label text="Tamaño" translateY="50.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="slPosicionSize" blockIncrement="5.0" max="50.0" min="5.0" onMouseDragged="#onClickSliderSize" onMouseReleased="#onClickSliderSize" translateY="50.0" value="25.0">
+                           <VBox.margin>
                               <Insets />
-                           </HBox.margin>
-                        </Button>
+                           </VBox.margin>
+                        </Slider>
+                        <ColorPicker fx:id="cpColor" onAction="#onClickColor" translateY="55.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ColorPicker>
                      </children>
-                  </HBox>
+                  </VBox>
                </children>
-            </VBox>
-            <VBox prefHeight="196.0" prefWidth="166.0">
-               <children>
-                  <Label text="Eje X" translateY="40.0">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <Slider fx:id="slPosicionX" blockIncrement="5.0" max="50.0" min="5.0" onMouseDragged="#onClickSliderX" onMouseReleased="#onClickSliderX" prefHeight="14.0" prefWidth="139.0" translateY="40.0" value="25.0">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Slider>
-                  <Label text="Eje Y" translateY="45.0">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <Slider fx:id="slPosicionY" blockIncrement="5.0" max="50.0" min="5.0" onMouseDragged="#onClickSliderY" onMouseReleased="#onClickSliderY" translateY="45.0" value="25.0" />
-                  <Label text="Tamaño" translateY="50.0">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <Slider fx:id="slPosicionSize" blockIncrement="5.0" max="50.0" min="5.0" onMouseDragged="#onClickSliderSize" onMouseReleased="#onClickSliderSize" translateY="50.0" value="25.0">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Slider>
-                  <ColorPicker fx:id="cpColor" onAction="#onClickColor" translateY="55.0">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </ColorPicker>
-               </children>
-               <HBox.margin>
-                  <Insets left="5.0" />
-               </HBox.margin>
-            </VBox>
+            </AnchorPane>
             <VBox prefHeight="196.0" prefWidth="106.0" translateX="20.0">
                <children>
                   <Button fx:id="btIniciar" mnemonicParsing="false" onAction="#onClickIniciar" text="Iniciar">

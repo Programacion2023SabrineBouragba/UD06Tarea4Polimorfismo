@@ -2,6 +2,7 @@ package com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.controllers;
 
 import com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model.Circulo;
 import com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model.Cuadrado;
+import com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model.Elipse;
 import com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model.Figura;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -13,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -61,6 +63,9 @@ public class InicioController implements Initializable {
 
     @FXML
     private Slider slPosicionY;
+    @FXML
+    private AnchorPane apCrearFiguras;
+
 
     @FXML
     void onClickGuardar(ActionEvent event) {
@@ -96,7 +101,7 @@ public class InicioController implements Initializable {
             figuraActual =new Circulo(xInicial,yInicial,cpColor.getValue(),sizeInicial/2);
         }else if (figuraSeleccionada instanceof Rectangle){
             //por hacer
-        }else{
+        }else if (figuraSeleccionada instanceof Elipse){
             //por hacer
         }
         figuraActual.dibujar(pnPanel);
@@ -113,6 +118,7 @@ public class InicioController implements Initializable {
         for (Figura figura: figuras){
             figura.dibujar(pnPanel);
         }
+        probandoFiguras(false);
         //iniciamos la animacion
         iniciaMovimiento();
     }
@@ -123,8 +129,10 @@ public class InicioController implements Initializable {
         for (Figura figura: figuras){
             figura.borrar(pnPanel);
         }
+
         //iniciamos la animacion
         timeline.stop();
+        probandoFiguras(true);
     }
 
     @FXML
@@ -136,6 +144,7 @@ public class InicioController implements Initializable {
 
     @FXML
     void onClickSliderX(MouseEvent event) {
+
         if (figuraActual!=null){
             figuraActual.cambiarPosicion((int)slPosicionX.getValue(), figuraActual.getY());
         }
@@ -168,6 +177,15 @@ public class InicioController implements Initializable {
             slPosicionY.setMax(altoPanel);
             slPosicionY.setValue(yInicial);
         });
+
+        probandoFiguras(true);
+    }
+
+
+    private void probandoFiguras(boolean estamosConfigurando) {
+        apCrearFiguras.setDisable(!estamosConfigurando);
+        btIniciar.setDisable(!estamosConfigurando);
+        btParar.setDisable(estamosConfigurando);
     }
 
     private void moverFigura(){
@@ -187,4 +205,5 @@ public class InicioController implements Initializable {
         //animacion se repite indefinidamente
         timeline.play();
     }
+
 }
