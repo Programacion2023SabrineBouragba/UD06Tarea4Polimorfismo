@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
@@ -100,10 +101,11 @@ public class InicioController implements Initializable {
         if(figuraSeleccionada instanceof Circle){
             figuraActual =new Circulo(xInicial,yInicial,cpColor.getValue(),sizeInicial/2);
         }else if (figuraSeleccionada instanceof Rectangle){
-            //por hacer
-        }else if (figuraSeleccionada instanceof Elipse){
-            //por hacer
+
+        }else if (figuraSeleccionada instanceof Ellipse){
+            figuraActual =new Elipse(xInicial,yInicial,cpColor.getValue(),sizeInicial/2);
         }
+
         figuraActual.dibujar(pnPanel);
     }
 

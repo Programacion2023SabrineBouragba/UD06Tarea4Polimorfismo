@@ -9,7 +9,7 @@ public abstract class Figura {
     private int deltaX=2;
     private int deltaY=1;
     private Color color;
-    private int size;
+    protected int size;
 
 
     //constructor
