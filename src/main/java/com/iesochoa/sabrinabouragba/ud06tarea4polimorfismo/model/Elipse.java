@@ -2,7 +2,6 @@ package com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Ellipse;
 
 public class Elipse extends Figura{

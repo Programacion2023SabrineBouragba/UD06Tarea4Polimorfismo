@@ -100,8 +100,8 @@ public class InicioController implements Initializable {
         //comprobamos el tipo de clase para saber la figura a la que se ha pulsado
         if(figuraSeleccionada instanceof Circle){
             figuraActual =new Circulo(xInicial,yInicial,cpColor.getValue(),sizeInicial/2);
-        }else if (figuraSeleccionada instanceof Rectangle){
-
+        } else if (figuraSeleccionada instanceof Rectangle) {
+            figuraActual = new Cuadrado(xInicial, yInicial, cpColor.getValue(), sizeInicial/2);
         }else if (figuraSeleccionada instanceof Ellipse){
             figuraActual =new Elipse(xInicial,yInicial,cpColor.getValue(),sizeInicial/2);
         }
