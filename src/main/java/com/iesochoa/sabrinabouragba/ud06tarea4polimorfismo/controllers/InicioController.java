@@ -67,7 +67,10 @@ public class InicioController implements Initializable {
     @FXML
     private AnchorPane apCrearFiguras;
 
-
+    /**
+     * Funcionalidad al dar clic para guardar la figura y borrarla del panel.
+     * Guarda todas las figuras en la lista.
+     */
     @FXML
     void onClickGuardar(ActionEvent event) {
         //añadimos la figura a la lista
@@ -76,12 +79,20 @@ public class InicioController implements Initializable {
         figuraActual.borrar(pnPanel);
     }
 
+    /**
+     * Funcionalidad al dar clic para borrar todas las figuras.
+     * Borra todas las figuras de la lista.
+     */
     @FXML
     void onClickBorrarTodo(ActionEvent event) {
         //borramos de la lista todas las figuras
         figuras.clear();
     }
 
+    /**
+     * Funcionalidad al dar clic para asignar color a las figuras.
+     * Cambia color de las figuras.
+     */
     @FXML
     void onClickColor(ActionEvent event) {
         if (figuraActual!=null){
@@ -89,6 +100,11 @@ public class InicioController implements Initializable {
         }
     }
 
+    /**
+     * Acción donde se selecciona una figura.
+     * Si ya hay una figura seleccionada, la borra del panel.
+     * Luego, crea una nueva instancia de la figura seleccionada y la dibuja en el panel.
+     */
     @FXML
     void onClickSeleccionFigura(MouseEvent event) {
         //si ya hay una figura la quitamos
@@ -109,7 +125,11 @@ public class InicioController implements Initializable {
         figuraActual.dibujar(pnPanel);
     }
 
-
+    /**
+     * Acción donde se inicia la lista de figuras.
+     * Borra las figuras del panel.
+     * Luego, se incia el trayecto establecido.
+     */
     @FXML
     void onClickIniciar(ActionEvent event) {
         //quitamos figura actual del panel
@@ -125,6 +145,9 @@ public class InicioController implements Initializable {
         iniciaMovimiento();
     }
 
+    /**
+     * Acción donde se para la lista de figuras.
+     */
     @FXML
     void onClickParar(ActionEvent event) {
         //quitamos las figuras
@@ -137,6 +160,9 @@ public class InicioController implements Initializable {
         probandoFiguras(true);
     }
 
+    /**
+     * Acción donde se establece el tamaño de la figura.
+     */
     @FXML
     void onClickSliderSize(MouseEvent event) {
         if (figuraActual!=null){
@@ -144,6 +170,9 @@ public class InicioController implements Initializable {
         }
     }
 
+    /**
+     * Acción donde se establece posicion X de la figura.
+     */
     @FXML
     void onClickSliderX(MouseEvent event) {
 
@@ -152,6 +181,9 @@ public class InicioController implements Initializable {
         }
     }
 
+    /**
+     * Acción donde se establece posicion Y de la figura.
+     */
     @FXML
     void onClickSliderY(MouseEvent event) {
         if (figuraActual!=null){
@@ -159,6 +191,10 @@ public class InicioController implements Initializable {
         }
     }
 
+    /**
+     * Inicializa el controlador después de que se haya cargado la interfaz de usuario.
+     * Configura el tamaño del panel y los valores iniciales de los sliders.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //se ejecutará cuando ya se muestre la scene
@@ -183,19 +219,33 @@ public class InicioController implements Initializable {
         probandoFiguras(true);
     }
 
-
+    /**
+     * Si estamos configurando figuras, habilita los elementos relacionados con la creación de figuras.
+     * Si no estamos configurando figuras, solo habilita el botón para detener la animación.
+     *
+     * @param estamosConfigurando indica si estamos configurando las figuras.
+     */
     private void probandoFiguras(boolean estamosConfigurando) {
+        //Habilita o deshabilita los elementos
         apCrearFiguras.setDisable(!estamosConfigurando);
         btIniciar.setDisable(!estamosConfigurando);
         btParar.setDisable(estamosConfigurando);
     }
 
+    /**
+     * Mueve todas las figuras en el panel según sus deltas.
+     * Este método se llama repetidamente para actualizar la posición de las figuras durante la animación.
+     */
     private void moverFigura(){
         for (Figura figura:figuras){
             figura.moverFigura(pnPanel);
         }
     }
 
+    /**
+     * Inicia el movimiento de las figuras en el panel.
+     * Este método inicia la animación que mueve las figuras en el panel.
+     */
     void iniciaMovimiento(){
         //crear timeline para animacion
         if (timeline==null){

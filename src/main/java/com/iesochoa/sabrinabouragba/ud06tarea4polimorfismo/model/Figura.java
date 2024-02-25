@@ -3,6 +3,7 @@ package com.iesochoa.sabrinabouragba.ud06tarea4polimorfismo.model;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
+
 public abstract class Figura {
     private int x;
     private int y;
@@ -20,6 +21,8 @@ public abstract class Figura {
         this.size=size;
     }
 
+
+    //Métodos para poder dibujar, borrar, cambiar posicion, color y tamaño de la figura en la que estamos trabajando
     public void dibujar(Pane pnPanel){
 
     }
@@ -44,7 +47,7 @@ public abstract class Figura {
 
     }
 
-
+    //Métodos getters y setters para las coordenadas, asignar color, y deltas de la figura
     public int getX(){
         return x;
     }
